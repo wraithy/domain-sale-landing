@@ -4,7 +4,7 @@
 	require 'PHPMailer/PHPMailer.php';
 	require 'PHPMailer/SMTP.php';
 	require 'PHPMailer/Exception.php';
-	require 'includes/config.php';
+	require_once 'includes/config.php';
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
@@ -111,29 +111,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:300,700,800" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
         <div class="wrapper">
             <div>
                 <div>
                     <span>
-                        <strong class="text-primary"><?php echo $statusTitle; ?></strong>
+                        <strong><?php echo $statusTitle; ?></strong>
                         <span><?php echo $statusMsg; ?></span>
                     </span>
                     <p><?php echo $statusInfo; ?></p>
                     <div class="mailto">
                         <i class="fa-regular fa-comment"></i>
-                        <a href="mailto:hello@wraith.gg">hello@wraith.gg</a>
+                        <a href="mailto:<?php echo $your_email ?>"><?php echo $your_email ?></a>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="whoami">
-                    <strong>Wraith</strong>
-					<span>Wales, United Kingdom</span>
-					<span>Freelance Graphic Designer, Web Developer & Entrepreneur.</span>
-					<a href="https://wraith.gg" target="_blank">wraith.gg</a>
+                    <strong><?php echo $your_name ?></strong>
+					<span><?php echo $your_location ?></span>
+					<span><?php echo $your_bio ?></span>
+					<a href="<?php echo $your_website ?>" target="_blank"><?php echo $your_email ?></a>
 				</div>
             </div>
         </div>

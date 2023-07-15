@@ -2,7 +2,7 @@
     header('Location: https://wraith.gg');
 }
 
-require 'includes/config.php';
+require_once 'includes/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ require 'includes/config.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:300,700,800" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="/css/styles.css" />
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback" async defer></script>
     </head>
     <body>
@@ -21,13 +21,13 @@ require 'includes/config.php';
             <div>
                 <div>
                     <span>
-                        <strong class="text-primary"><?php echo $_SERVER['SERVER_NAME'] ?></strong>
+                        <strong><?php echo $_SERVER['SERVER_NAME'] ?></strong>
                         <span>is available for purchase</span>
                     </span>
                     <p>Interested in this domain? Please make an offer using the form provided.</p>
                     <div class="mailto">
                         <i class="fa-regular fa-comment"></i>
-                        <a href="mailto:hello@wraith.gg">hello@wraith.gg</a>
+                        <a href="mailto:<?php echo $your_email ?>"><?php echo $your_email ?></a>
                     </div>
                 </div>
             </div>
