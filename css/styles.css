@@ -8,13 +8,16 @@
     --error: #f44336;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -147,7 +150,7 @@ a.btn:focus {
 }
 
 .form__group {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 input,
@@ -200,11 +203,11 @@ textarea::placeholder {
 
 .input__wrapper {
     position: relative;
-    overflow: hidden;
+    width: 100%;
 }
 
 .input__wrapper input {
-    width: calc(100% - 88px);
+    width: 100%;
 }
 
 .currency {
@@ -214,7 +217,7 @@ textarea::placeholder {
     width: fit-content;
     background-color: var(--primary-color);
     color: var(--white);
-    height: 45px;
+    height: 100%;
     padding: 0 16px;
     font-size: 1rem;
     font-weight: 700;
@@ -229,13 +232,15 @@ textarea::placeholder {
 }
 
 .form__input__feedback {
+    position: absolute;
+    bottom: -1.4rem;
     font-size: 14px;
     color: var(--error);
 }
 
 .form__input__feedback::before {
     content: "\f071";
-    font-family: "Font Awesome 6 Pro";
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     margin-right: 0.2rem;
 }

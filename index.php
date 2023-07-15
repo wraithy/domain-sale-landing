@@ -13,7 +13,7 @@ require_once 'includes/config.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:300,700,800" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="css/styles.css" />
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback" async defer></script>
     </head>
     <body>
@@ -36,18 +36,22 @@ require_once 'includes/config.php';
                     <form id="offer-form" action="submit.php" method="post">
                         <div class="form__group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name" class="form__input" placeholder="John Doe" />
+                            <div class="input__wrapper">
+                                <input type="text" name="name" id="name" class="form__input" placeholder="John Doe" />
+                            </div>
                         </div>
                         <div class="form__group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" class="form__input" placeholder="email@example.com" />
+                            <div class="input__wrapper">
+                                <input type="email" name="email" id="email" class="form__input" placeholder="email@example.com" />
+                            </div>
                         </div>
                         <div class="form__group">
                             <label for="price">Offer</label>
                             <div class="input__wrapper">
-                            <input type="number" name="price" class="form__input" min="100" placeholder="100" />
-                            <span class="currency">USD</span>
-                        </div>
+                                <input type="number" name="price" class="form__input" min="100" placeholder="100" />
+                                <span class="currency">USD</span>
+                            </div>
                         </div>
                         <div class="form__group">
                             <label for="comments">Message <span>(Optional)</span></label>
