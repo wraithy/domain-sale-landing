@@ -67,11 +67,117 @@
 							
 								// Set email subject and body
 								$mail->Subject = 'Domain Inquiry - ' . $_SERVER['SERVER_NAME'];
-								$mail->Body = 'Inquiry details below.<br><br>' .
-									'Name: ' . $name . '<br>' .
-									'Email: ' . $email_from . '<br>' .
-									'Offer: $' . $price . '<br>' .
-									'Message: ' . $comments . '<br>';
+								$mail->Body = '<!DOCTYPE html>
+								<html lang="en">
+									<head>
+										<meta charset="UTF-8" />
+										<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+										<link
+											rel="stylesheet"
+											href="https://fonts.googleapis.com/css?family=Mukta+Mahee:300,700,800"
+										/>
+										<style>
+											html,
+											body {
+												font-family: "Mukta Mahee", sans-serif;
+												line-height: 1.5;
+												text-align: left;
+												margin: 0;
+												padding: 0;
+												box-sizing: border-box;
+											}
+
+											body {
+												display: flex;
+												flex-direction: column;
+												justify-content: center;
+												align-items: center;
+												margin-top: 6rem;
+											}
+
+											div {
+												width: 80%;
+											}
+
+											h1 {
+												color: #222;
+												padding: 0;
+												margin: 0;
+											}
+
+											p {
+												color: #999;
+												padding: 0;
+												margin: 0;
+											}
+
+											table {
+												border-collapse: separate !important;
+												width: 80%;
+												border-collapse: collapse;
+												border-spacing: 0;
+												margin-bottom: 1.5rem;
+												border: 1px solid #ddd;
+												border-radius: 4px;
+												color: #444;
+												margin-top: 2rem;
+											}
+
+											* {
+												overflow: hidden;
+											}
+
+											table th {
+												font-weight: 700;
+												text-align: right;
+												width: 12%;
+												color: #fff;
+												background: #5d3fd3;
+											}
+
+											table th,
+											table td {
+												padding: 0.5rem;
+												vertical-align: top;
+											}
+
+											table td {
+												padding-left: 1rem;
+											}
+										</style>
+									</head>
+									<body>
+										<div>
+											<h1>Offer Received</h1>
+											<p>
+												You have received an offer from a user on your website. The
+												details of the offer are shown below.
+											</p>
+										</div>
+										<table>
+											<tr>
+												<th>Name:</th>
+												<td>'.$name.'</td>
+											</tr>
+											<tr>
+												<th>Email:</th>
+												<td>'.$email_from.'</td>
+											</tr>
+											<tr>
+												<th>Domain:</th>
+												<td>'.$_SERVER['SERVER_NAME'].'</td>
+											</tr>
+											<tr>
+												<th>Offer:</th>
+												<td><strong>$'.$price.'</strong></td>
+											</tr>
+											<tr>
+												<th>Message:</th>
+												<td>'.$comments.'</td>
+											</tr>
+										</table>
+									</body>
+								</html>';
 							
 								// Send the email
 								$mail->send();
