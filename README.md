@@ -21,4 +21,4 @@ Make sure that...
 
 I was looking for a simple landing page to sell a few domains and came across a couple however I wasn't happy with a few things and decided to make my own. Some of the code used in this project was taken from the repo linked below along with the main design (although I have re-written it).
 
-**Original:** https://github.com/ardalann/domain-for-sale-landing-page
+**Inspired by:** https://github.com/saroz/domain-for-sale
